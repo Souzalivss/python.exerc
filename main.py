@@ -8,4 +8,3 @@ while n != 0:
         else :
             impar = impar + 1
 print('Voce digitou {} numeros pares e {} numeros impares'.format(par, impar))
-print('FIM')
