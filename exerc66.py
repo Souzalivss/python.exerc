@@ -1,7 +1,8 @@
-n = s = 0
+n = s = cont = 0
 while True:
     n = int(input('Digite um numero: '))
     if n == 999:
         break
     s = s + n
-print(f'a soma é {s}')
+    cont = cont + 1
+print(f'a soma dos {cont} valores é {s}')
