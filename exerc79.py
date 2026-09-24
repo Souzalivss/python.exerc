@@ -9,4 +9,5 @@ while True:
     r = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
     if r in 'Nn':
         break
+numeros.sort() #colocá-los em ordem
 print('Voce digitou os valores {}'.format(numeros))
