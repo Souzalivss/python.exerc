@@ -1,18 +1,12 @@
-from random import randint
-from time import sleep
-from operator import itemgetter
-jogo = {
-    'jogador1': randint(1, 6),
-    'jogador2': randint(1, 6),
-    'jogador3': randint(1, 6),
-    'jogador4': randint(1, 6),
-}
-print('Valores sorteados: ')
-for k, v in jogo.items():
-    print(f'{k}: tirou {v} no dado.')
-    sleep(1)
-ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
-print('-=' * 15)
-for i, v in enumerate(ranking):
-    print(f'{i+1} lugar: {v[0]} com {v[1]}.')
-    sleep(1)
+from datetime import datetime
+dados = dict()
+dados['nome'] = str(input('Nome: '))
+nasc = int(input('Ano de nascimento: '))
+dados['idade'] = datetime.now().year - nasc
+dados['ctps'] = int(input('carteira de trabalho (0 não tem): '))
+if dados['ctps'] != 0:
+    dados['contratação'] = int(input('Ano de contratação: '))
+    dados['salário'] = float(input('Salário: R$'))
+    dados['aposentadoria'] = dados['idade'] + ((dados['contratação'] + 35) - datetime.now().year)
+for k, v in dados.items():
+    print(f' - {k} tem o valor {v}')
